@@ -12,7 +12,7 @@ class EnvironmentModel(object):
     """
 
     def __init__(self):
-        self.mount_path_base = '/mnt/sshfs/'
+        self.mount_path_base = os.path.expanduser('~/share/')
         cfg_home = os.getenv('XDG_CONFIG_HOME', os.path.expanduser('~/.config'))
         self.config_path_base = "%s/" % os.path.join(cfg_home, 'sftpman')
         self.config_path_mounts = '%smounts/' % self.config_path_base
